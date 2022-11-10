@@ -40,3 +40,19 @@ void move(Coord3D *ppos, Coord3D *pvel, double dt)
     (*ppos).y = (*ppos).y + (*pvel).y * dt;
     (*ppos).z = (*ppos).z + (*pvel).z * dt;
 }
+
+//a?b:c == if a, b else c
+
+Coord3D* createCoord3D(double x, double y, double z)
+{
+    Coord3D *point = new Coord3D;
+    (*point).x = x;
+    (*point).y = y;
+    (*point).z = z;
+    return point; 
+}
+
+void deleteCoord3D(Coord3D *p)
+{
+    delete p;
+}
