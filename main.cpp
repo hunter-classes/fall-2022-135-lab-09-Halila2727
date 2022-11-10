@@ -29,4 +29,16 @@ int main()
   std::cout << "\nTask C: Move In 3D\nCoord3D pos = {0, 0, 100}\nCoord3D vel = {1, -5, 0.2}\nTime: 2.0\n";
   std::cout << "Position x: " << pos.x << "\nPosition y: " << pos.y << "\nPosition z: " << pos.z << std::endl;
   std::cout << "\n------------------\n";
+
+  std::cout << "\nTask E: Create and delete Coord3D Object\n";
+  Coord3D *pointPos = createCoord3D(-85, -1, 1);
+  Coord3D *pointVel = createCoord3D(-5, 0, 30);
+  std::cout << "pointPos x: " << (*pointPos).x << "\npointPos y: " << (*pointPos).y << "\npointPos z: " << (*pointPos).z;
+  std::cout << "\n\npointVel x: " << (*pointVel).x << "\npointVel y: " << (*pointVel).y << "\npointVel z: " << (*pointVel).z;
+
+  move(pointPos, pointVel, 8.0);
+
+  std::cout << "\n\npointPos coordinates after moving for 8 seconds: " << (*pointPos).x << " " << (*pointPos).y << " " << (*pointPos).z << "\n";
+  deleteCoord3D(pointPos);
+  deleteCoord3D(pointVel);
 }
