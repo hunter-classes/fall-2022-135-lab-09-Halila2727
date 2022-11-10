@@ -22,4 +22,11 @@ int main()
   Coord3D * ans = fartherFromOrigin(&pointP, &pointQ);
   std::cout << "\nTask B: Further from Origin\nCoord3D pointP = {10, 20, 30}  pointQ = {-20, 21, -22}\nAnswer is " << ans << "\n";
   std::cout << "\n------------------\n";
+
+  Coord3D pos = {0, 0, 100.0};
+  Coord3D vel = {1, -5, 0.2};
+  move(&pos, &vel, 2.0); // object pos gets changed
+  std::cout << "\nTask C: Move In 3D\nCoord3D pos = {0, 0, 100}\nCoord3D vel = {1, -5, 0.2}\nTime: 2.0\n";
+  std::cout << "Position x: " << pos.x << "\nPosition y: " << pos.y << "\nPosition z: " << pos.z << std::endl;
+  std::cout << "\n------------------\n";
 }
