@@ -28,3 +28,20 @@ TEST_CASE("Task B: Farther From Origin")
     Coord3D point2c = {-25, -64, 15}; 
     CHECK(fartherFromOrigin(&point1c, &point2c) == &point1c);
 }
+
+TEST_CASE("Task C: Velocity and Motion")
+{
+    Coord3D pos1 = {0, 0, 100.0};
+    Coord3D vel1 = {1, -5, 0.2};
+    move(&pos1, &vel1, 2.0);
+    CHECK(pos1.x == 2);
+    CHECK(pos1.y == -10);
+    CHECK(pos1.z == 100.4);
+
+    Coord3D pos2 = {-85, -1, 1};
+    Coord3D vel2 = {-5, 0, 30};
+    move(&pos2, &vel2, 6.5);
+    CHECK(pos2.x == -117.5);
+    CHECK(pos2.y == -1);
+    CHECK(pos2.z == 196);
+}
