@@ -45,3 +45,19 @@ TEST_CASE("Task C: Velocity and Motion")
     CHECK(pos2.y == -1);
     CHECK(pos2.z == 196);
 }
+
+TEST_CASE("Task E: Create Coord3D Object")
+{
+    Coord3D *pointF = createCoord3D(4, 5 ,32);
+    CHECK((*pointF).x == 4);
+    CHECK((*pointF).y == 5);
+    CHECK((*pointF).z == 32);
+
+    Coord3D *pointG = createCoord3D(-523, 89723 , 0.0003);
+    CHECK((*pointG).x == -523);
+    CHECK((*pointG).y == 89723);
+    CHECK((*pointG).z == 0.0003);
+
+    deleteCoord3D(pointF);
+    deleteCoord3D(pointG);
+}
